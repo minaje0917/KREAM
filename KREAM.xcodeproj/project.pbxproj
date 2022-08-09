@@ -12,6 +12,8 @@
 		7743A39F28A23A5F0089B473 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743A39E28A23A5F0089B473 /* ViewController.swift */; };
 		7743A3A428A23A600089B473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3A328A23A600089B473 /* Assets.xcassets */; };
 		7743A3A728A23A600089B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3A528A23A600089B473 /* LaunchScreen.storyboard */; };
+		7743A3B028A2419C0089B473 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7743A3AF28A2419C0089B473 /* SnapKit */; };
+		7743A3B328A241B30089B473 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 7743A3B228A241B30089B473 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7743A3B028A2419C0089B473 /* SnapKit in Frameworks */,
+				7743A3B328A241B30089B473 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,14 +58,86 @@
 		7743A39928A23A5F0089B473 /* KREAM */ = {
 			isa = PBXGroup;
 			children = (
-				7743A39A28A23A5F0089B473 /* AppDelegate.swift */,
-				7743A39C28A23A5F0089B473 /* SceneDelegate.swift */,
-				7743A39E28A23A5F0089B473 /* ViewController.swift */,
-				7743A3A328A23A600089B473 /* Assets.xcassets */,
-				7743A3A528A23A600089B473 /* LaunchScreen.storyboard */,
+				7743A3B428A242DE0089B473 /* Resource */,
+				7743A3B528A242EF0089B473 /* Source */,
 				7743A3A828A23A600089B473 /* Info.plist */,
 			);
 			path = KREAM;
+			sourceTree = "<group>";
+		};
+		7743A3B428A242DE0089B473 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7743A3BC28A243580089B473 /* Storyboards */,
+				7743A3BB28A2434A0089B473 /* APIServices */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7743A3B528A242EF0089B473 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7743A3B628A242FB0089B473 /* VCs */,
+				7743A3B728A243050089B473 /* Models */,
+				7743A3B828A2430C0089B473 /* Designs */,
+				7743A3B928A243160089B473 /* Cells */,
+				7743A3BA28A2431D0089B473 /* Classes */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7743A3B628A242FB0089B473 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				7743A39E28A23A5F0089B473 /* ViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		7743A3B728A243050089B473 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7743A3B828A2430C0089B473 /* Designs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Designs;
+			sourceTree = "<group>";
+		};
+		7743A3B928A243160089B473 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7743A3BA28A2431D0089B473 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7743A3BB28A2434A0089B473 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				7743A39A28A23A5F0089B473 /* AppDelegate.swift */,
+				7743A39C28A23A5F0089B473 /* SceneDelegate.swift */,
+				7743A3A328A23A600089B473 /* Assets.xcassets */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		7743A3BC28A243580089B473 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7743A3A528A23A600089B473 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +156,10 @@
 			dependencies = (
 			);
 			name = KREAM;
+			packageProductDependencies = (
+				7743A3AF28A2419C0089B473 /* SnapKit */,
+				7743A3B228A241B30089B473 /* Then */,
+			);
 			productName = KREAM;
 			productReference = 7743A39728A23A5F0089B473 /* KREAM.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +188,10 @@
 				Base,
 			);
 			mainGroup = 7743A38E28A23A5F0089B473;
+			packageReferences = (
+				7743A3AE28A2419C0089B473 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7743A3B128A241B30089B473 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 7743A39828A23A5F0089B473 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,6 +426,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7743A3AE28A2419C0089B473 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		7743A3B128A241B30089B473 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7743A3AF28A2419C0089B473 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7743A3AE28A2419C0089B473 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7743A3B228A241B30089B473 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7743A3B128A241B30089B473 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7743A38F28A23A5F0089B473 /* Project object */;
 }
