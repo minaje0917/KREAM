@@ -11,9 +11,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
 }
 
+extension UIColor {
+    class var background: UIColor? {return UIColor(named: "background")}
+    class var Main: UIColor? {return UIColor(named: "Main")}
+    class var Line: UIColor? {return UIColor(named: "Line")}
+    
+}

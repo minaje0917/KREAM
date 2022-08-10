@@ -14,6 +14,15 @@
 		7743A3A728A23A600089B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3A528A23A600089B473 /* LaunchScreen.storyboard */; };
 		7743A3B028A2419C0089B473 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7743A3AF28A2419C0089B473 /* SnapKit */; };
 		7743A3B328A241B30089B473 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 7743A3B228A241B30089B473 /* Then */; };
+		7743A3BE28A392260089B473 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743A3BD28A392260089B473 /* LoginViewController.swift */; };
+		7743A3CF28A3A3020089B473 /* LeferiPointBlackOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3C928A3A2E10089B473 /* LeferiPointBlackOblique.otf */; };
+		7743A3D028A3A3060089B473 /* LeferiPointBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3C828A3A2E10089B473 /* LeferiPointBlack.otf */; };
+		7743A3D128A3A3090089B473 /* LeferiBaseRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3C728A3A2E10089B473 /* LeferiBaseRegular.otf */; };
+		7743A3D228A3A30B0089B473 /* LeferiBaseBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3CA28A3A2E10089B473 /* LeferiBaseBold.otf */; };
+		7743A3D328A3A30D0089B473 /* LeferiPointWhiteOblique.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3CC28A3A2E10089B473 /* LeferiPointWhiteOblique.otf */; };
+		7743A3D428A3A30F0089B473 /* LeferiPointWhite.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3CB28A3A2E10089B473 /* LeferiPointWhite.otf */; };
+		7743A3D528A3A3110089B473 /* LeferiPointSpecialItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3CE28A3A2E10089B473 /* LeferiPointSpecialItalic.otf */; };
+		7743A3D628A3A3140089B473 /* LeferiPointSpecial.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7743A3CD28A3A2E10089B473 /* LeferiPointSpecial.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		7743A3A328A23A600089B473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7743A3A628A23A600089B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7743A3A828A23A600089B473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7743A3BD28A392260089B473 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7743A3C728A3A2E10089B473 /* LeferiBaseRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeferiBaseRegular.otf; sourceTree = "<group>"; };
+		7743A3C828A3A2E10089B473 /* LeferiPointBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeferiPointBlack.otf; sourceTree = "<group>"; };
+		7743A3C928A3A2E10089B473 /* LeferiPointBlackOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeferiPointBlackOblique.otf; sourceTree = "<group>"; };
+		7743A3CA28A3A2E10089B473 /* LeferiBaseBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeferiBaseBold.otf; sourceTree = "<group>"; };
+		7743A3CB28A3A2E10089B473 /* LeferiPointWhite.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeferiPointWhite.otf; sourceTree = "<group>"; };
+		7743A3CC28A3A2E10089B473 /* LeferiPointWhiteOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeferiPointWhiteOblique.otf; sourceTree = "<group>"; };
+		7743A3CD28A3A2E10089B473 /* LeferiPointSpecial.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeferiPointSpecial.otf; sourceTree = "<group>"; };
+		7743A3CE28A3A2E10089B473 /* LeferiPointSpecialItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeferiPointSpecialItalic.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				7743A39E28A23A5F0089B473 /* ViewController.swift */,
+				7743A3BD28A392260089B473 /* LoginViewController.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -104,6 +123,14 @@
 		7743A3B828A2430C0089B473 /* Designs */ = {
 			isa = PBXGroup;
 			children = (
+				7743A3CA28A3A2E10089B473 /* LeferiBaseBold.otf */,
+				7743A3C728A3A2E10089B473 /* LeferiBaseRegular.otf */,
+				7743A3C828A3A2E10089B473 /* LeferiPointBlack.otf */,
+				7743A3C928A3A2E10089B473 /* LeferiPointBlackOblique.otf */,
+				7743A3CD28A3A2E10089B473 /* LeferiPointSpecial.otf */,
+				7743A3CE28A3A2E10089B473 /* LeferiPointSpecialItalic.otf */,
+				7743A3CB28A3A2E10089B473 /* LeferiPointWhite.otf */,
+				7743A3CC28A3A2E10089B473 /* LeferiPointWhiteOblique.otf */,
 			);
 			path = Designs;
 			sourceTree = "<group>";
@@ -206,8 +233,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7743A3D228A3A30B0089B473 /* LeferiBaseBold.otf in Resources */,
+				7743A3CF28A3A3020089B473 /* LeferiPointBlackOblique.otf in Resources */,
+				7743A3D028A3A3060089B473 /* LeferiPointBlack.otf in Resources */,
 				7743A3A728A23A600089B473 /* LaunchScreen.storyboard in Resources */,
 				7743A3A428A23A600089B473 /* Assets.xcassets in Resources */,
+				7743A3D428A3A30F0089B473 /* LeferiPointWhite.otf in Resources */,
+				7743A3D528A3A3110089B473 /* LeferiPointSpecialItalic.otf in Resources */,
+				7743A3D628A3A3140089B473 /* LeferiPointSpecial.otf in Resources */,
+				7743A3D328A3A30D0089B473 /* LeferiPointWhiteOblique.otf in Resources */,
+				7743A3D128A3A3090089B473 /* LeferiBaseRegular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7743A3BE28A392260089B473 /* LoginViewController.swift in Sources */,
 				7743A39F28A23A5F0089B473 /* ViewController.swift in Sources */,
 				7743A39B28A23A5F0089B473 /* AppDelegate.swift in Sources */,
 				7743A39D28A23A5F0089B473 /* SceneDelegate.swift in Sources */,
