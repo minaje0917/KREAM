@@ -12,7 +12,11 @@ import SnapKit
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
-        
+        for fontFamily in UIFont.familyNames {
+            for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
+                print(fontName)
+            }
+        }
         super.viewDidLoad()
         view.backgroundColor = .background
         addView()
@@ -22,12 +26,18 @@ class LoginViewController: UIViewController {
     lazy var Logo = UILabel().then{
         $0.text = "KREAM"
         $0.textColor = .Main
-        $0.font = UIFont(name: "LeferiPoint-BlackOblique", size: 30)
+        $0.font = UIFont(name: "LeferiPoint-BlackOblique", size: 40)
     }
 
     
+    lazy var Logotext = UILabel().then{
+        $0.text = "KICKS RULE EVERYTHING AROUND ME"
+        $0.textColor = .Main
+        $0.font = UIFont(name: "LeferiBaseType-Bold", size: 12)
+    }
+    
     private func addView() {
-        [Logo].forEach {
+        [Logo,Logotext].forEach {
             view.addSubview($0)
         }
     }
@@ -35,7 +45,11 @@ class LoginViewController: UIViewController {
     private func setLayout() {
         Logo.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(180)
+        }
+        Logotext.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(Logo.snp.top).offset(50)
         }
     }
 
