@@ -32,12 +32,24 @@ class LoginViewController: UIViewController {
         $0.textColor = .Main
         $0.font = UIFont(name: "LeferiBaseType-Regular", size: 15)
     }
+    let pwText = UILabel().then{
+        $0.text = "비밀번호"
+        $0.textColor = .Main
+        $0.font = UIFont(name: "LeferiBaseType-Regular", size: 15)
+    }
     
     let emailTextField = UITextField().then {
         $0.placeholder = "예) kream@kream.co.kr"
     }
+    let pwTextField = UITextField().then {
+        $0.placeholder = ""
+    }
+    
     
     let emailUnderLine = UIView().then {
+        $0.backgroundColor = .Line
+    }
+    let pwUnderLine = UIView().then {
         $0.backgroundColor = .Line
     }
     
@@ -56,7 +68,8 @@ class LoginViewController: UIViewController {
 
     
     private func addView() {
-        [Logo,Logotext,emailTextField,emailUnderLine,emailText].forEach {
+        [Logo,Logotext,emailTextField,emailUnderLine,emailText
+        ,pwUnderLine,pwText,pwTextField].forEach {
             view.addSubview($0)
         }
     }
@@ -84,6 +97,21 @@ class LoginViewController: UIViewController {
             $0.leading.equalTo(emailTextField.snp.leading).offset(0)
             $0.bottom.equalTo(emailTextField.snp.top).offset(-7)
         }
+        pwTextField.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(400)
+            $0.trailing.equalToSuperview().offset(-20)
+        }
+        pwUnderLine.snp.makeConstraints {
+            $0.height.equalTo(2)
+            $0.leading.trailing.equalTo(pwTextField)
+            $0.top.equalTo(pwTextField.snp.bottom).offset(10)
+        }
+        pwText.snp.makeConstraints{
+            $0.leading.equalTo(pwTextField.snp.leading).offset(0)
+            $0.bottom.equalTo(pwTextField.snp.top).offset(-7)
+        }
+        
     }
     
 }
