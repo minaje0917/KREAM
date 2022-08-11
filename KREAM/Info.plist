@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>LeferiBaseRegular.otf</string>
 		<string>LeferiBaseBold.otf</string>
 		<string>LeferiPointBlackOblique.otf</string>
 	</array>

@@ -10,6 +10,7 @@ import Then
 import SnapKit
 
 class LoginViewController: UIViewController {
+    private let bounds = UIScreen.main.bounds
 
     override func viewDidLoad() {
         for fontFamily in UIFont.familyNames {
@@ -21,6 +22,23 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .background
         addView()
         setLayout()
+    }
+    override func viewDidLayoutSubviews() {
+        emailTextField.borderStyle = .none
+    }
+    
+    let emailText = UILabel().then{
+        $0.text = "이메일 주소"
+        $0.textColor = .Main
+        $0.font = UIFont(name: "LeferiBaseType-Regular", size: 15)
+    }
+    
+    let emailTextField = UITextField().then {
+        $0.placeholder = "예) kream@kream.co.kr"
+    }
+    
+    let emailUnderLine = UIView().then {
+        $0.backgroundColor = .Line
     }
     
     lazy var Logo = UILabel().then{
@@ -35,9 +53,10 @@ class LoginViewController: UIViewController {
         $0.textColor = .Main
         $0.font = UIFont(name: "LeferiBaseType-Bold", size: 12)
     }
+
     
     private func addView() {
-        [Logo,Logotext].forEach {
+        [Logo,Logotext,emailTextField,emailUnderLine,emailText].forEach {
             view.addSubview($0)
         }
     }
@@ -45,12 +64,26 @@ class LoginViewController: UIViewController {
     private func setLayout() {
         Logo.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(180)
+            $0.top.equalToSuperview().offset(150)
         }
         Logotext.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(Logo.snp.top).offset(50)
+            $0.top.equalTo(Logo.snp.top).offset(55)
+        }
+        emailTextField.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(300)
+            $0.trailing.equalToSuperview().offset(-20)
+        }
+        emailUnderLine.snp.makeConstraints {
+            $0.height.equalTo(2)
+            $0.leading.trailing.equalTo(emailTextField)
+            $0.top.equalTo(emailTextField.snp.bottom).offset(10)
+        }
+        emailText.snp.makeConstraints{
+            $0.leading.equalTo(emailTextField.snp.leading).offset(0)
+            $0.bottom.equalTo(emailTextField.snp.top).offset(-7)
         }
     }
-
+    
 }
