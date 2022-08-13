@@ -65,11 +65,21 @@ class LoginViewController: UIViewController {
         $0.textColor = .Main
         $0.font = UIFont(name: "LeferiBaseType-Bold", size: 12)
     }
+    
+    lazy var signUpButton = UIButton().then{
+        let text = NSAttributedString(string: "로그인")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 18)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.backgroundColor = .Line
+        $0.layer.cornerRadius = 10
+        
+    }
 
     
     private func addView() {
         [Logo,Logotext,emailTextField,emailUnderLine,emailText
-        ,pwUnderLine,pwText,pwTextField].forEach {
+        ,pwUnderLine,pwText,pwTextField, signUpButton].forEach {
             view.addSubview($0)
         }
     }
@@ -110,6 +120,12 @@ class LoginViewController: UIViewController {
         pwText.snp.makeConstraints{
             $0.leading.equalTo(pwTextField.snp.leading).offset(0)
             $0.bottom.equalTo(pwTextField.snp.top).offset(-7)
+        }
+        signUpButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(pwUnderLine.snp.bottom).offset(40)
+            $0.size.equalTo(bounds.height * 0.07)
+            $0.trailing.equalToSuperview().offset(-20)
         }
         
     }
