@@ -11,7 +11,11 @@ import SnapKit
 
 class LoginViewController: UIViewController {
     private let bounds = UIScreen.main.bounds
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         for fontFamily in UIFont.familyNames {
             for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
