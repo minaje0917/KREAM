@@ -20,5 +20,7 @@ extension UIColor {
     class var background: UIColor? {return UIColor(named: "background")}
     class var Main: UIColor? {return UIColor(named: "Main")}
     class var Line: UIColor? {return UIColor(named: "Line")}
+    class var Wrong: UIColor? {return UIColor(named: "Wrong")}
+
     
 }

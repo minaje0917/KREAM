@@ -9,13 +9,16 @@ import UIKit
 import Then
 import SnapKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     private let bounds = UIScreen.main.bounds
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     override func viewDidLoad() {
         for fontFamily in UIFont.familyNames {
             for fontName in UIFont.fontNames(forFamilyName: fontFamily) {
@@ -26,7 +29,22 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .background
         addView()
         setLayout()
+        
     }
+    
+    @objc func textFieldDidChange() {
+        if isFilled(emailTextField) && isFilled(pwTextField){
+            signUpButton.backgroundColor = .Main
+        }
+    }
+    
+    func isFilled(_ textField: UITextField) -> Bool {
+        guard let text = textField.text, !text.isEmpty else {
+            return false
+        }
+        return true
+    }
+    
     override func viewDidLayoutSubviews() {
         emailTextField.borderStyle = .none
     }
@@ -42,11 +60,13 @@ class LoginViewController: UIViewController {
         $0.font = UIFont(name: "LeferiBaseType-Regular", size: 15)
     }
     
-    let emailTextField = UITextField().then {
+    lazy var emailTextField = UITextField().then {
         $0.placeholder = "예) kream@kream.co.kr"
+        $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
-    let pwTextField = UITextField().then {
+    lazy var pwTextField = UITextField().then {
         $0.placeholder = ""
+        $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
     
