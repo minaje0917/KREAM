@@ -76,6 +76,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 13)
         $0.setTitleColor(.Main, for: .normal)
     }
+    lazy var findEmailButton = UIButton().then{
+        $0.backgroundColor = .background
+        let text = NSAttributedString(string: "이메일 찾기")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 13)
+        $0.setTitleColor(.Main, for: .normal)
+    }
+    
+    lazy var findPwButton = UIButton().then{
+        $0.backgroundColor = .background
+        let text = NSAttributedString(string: "비밀번호 찾기")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 13)
+        $0.setTitleColor(.Main, for: .normal)
+    }
+    let stroke1 = UIView().then {
+        $0.backgroundColor = .Line
+    }
+    let stroke2 = UIView().then {
+        $0.backgroundColor = .Line
+    }
     
     let emailUnderLine = UIView().then {
         $0.backgroundColor = .Line
@@ -110,7 +131,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private func addView() {
         [Logo,Logotext,emailTextField,emailUnderLine,emailText
-        ,pwUnderLine,pwText,pwTextField, signUpButton,signInButton].forEach {
+        ,pwUnderLine,pwText,pwTextField, signUpButton,signInButton,
+        findEmailButton, findPwButton,stroke1,stroke2].forEach {
             view.addSubview($0)
         }
     }
@@ -160,7 +182,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         signInButton.snp.makeConstraints {
             $0.top.equalTo(signUpButton.snp.bottom).offset(20)
-            $0.trailing.equalTo(view.snp.centerX).offset(-70)
+            $0.trailing.equalTo(view.snp.centerX).offset(-80)
+        }
+        findEmailButton.snp.makeConstraints {
+            $0.top.equalTo(signUpButton.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+        }
+        findPwButton.snp.makeConstraints {
+            $0.top.equalTo(signUpButton.snp.bottom).offset(20)
+            $0.trailing.equalTo(view.snp.centerX).offset(150)
+        }
+        stroke1.snp.makeConstraints{
+            $0.top.equalTo(signUpButton.snp.bottom).offset(29)
+            $0.trailing.equalTo(view.snp.centerX).offset(53)
+            $0.height.equalTo(14)
+            $0.width.equalTo(1)
+        }
+        stroke2.snp.makeConstraints{
+            $0.top.equalTo(signUpButton.snp.bottom).offset(29)
+            $0.trailing.equalTo(view.snp.centerX).offset(-55)
+            $0.height.equalTo(14)
+            $0.width.equalTo(1)
         }
         
     }
