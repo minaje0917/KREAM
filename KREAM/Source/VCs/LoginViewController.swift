@@ -69,6 +69,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
+    lazy var signInButton = UIButton().then{
+        $0.backgroundColor = .background
+        let text = NSAttributedString(string: "이메일 가입")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 13)
+        $0.setTitleColor(.Main, for: .normal)
+    }
     
     let emailUnderLine = UIView().then {
         $0.backgroundColor = .Line
@@ -103,7 +110,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private func addView() {
         [Logo,Logotext,emailTextField,emailUnderLine,emailText
-        ,pwUnderLine,pwText,pwTextField, signUpButton].forEach {
+        ,pwUnderLine,pwText,pwTextField, signUpButton,signInButton].forEach {
             view.addSubview($0)
         }
     }
@@ -111,7 +118,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private func setLayout() {
         Logo.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(150)
+            $0.top.equalToSuperview().offset(120)
         }
         Logotext.snp.makeConstraints{
             $0.centerX.equalToSuperview()
@@ -119,7 +126,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         emailTextField.snp.makeConstraints{
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(300)
+            $0.top.equalToSuperview().offset(280)
             $0.trailing.equalToSuperview().offset(-20)
         }
         emailUnderLine.snp.makeConstraints {
@@ -133,7 +140,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         pwTextField.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(400)
+            $0.top.equalToSuperview().offset(380)
             $0.trailing.equalToSuperview().offset(-20)
         }
         pwUnderLine.snp.makeConstraints {
@@ -150,6 +157,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             $0.top.equalTo(pwUnderLine.snp.bottom).offset(40)
             $0.size.equalTo(bounds.height * 0.07)
             $0.trailing.equalToSuperview().offset(-20)
+        }
+        signInButton.snp.makeConstraints {
+            $0.top.equalTo(signUpButton.snp.bottom).offset(20)
+            $0.trailing.equalTo(view.snp.centerX).offset(-70)
         }
         
     }
