@@ -49,6 +49,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.borderStyle = .none
     }
     
+    lazy var naverLoginButton = UIButton().then{
+        $0.backgroundColor = .background
+        let text = NSAttributedString(string: "네이버로 로그인")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 15)
+        $0.setTitleColor(.Main, for: .normal)
+        $0.layer.cornerRadius = 10
+        $0.layer.borderColor = UIColor.Line?.cgColor
+        $0.layer.borderWidth = 1
+    }
+    
+    lazy var appleLoginButton = UIButton().then{
+        $0.backgroundColor = .background
+        let text = NSAttributedString(string: "애플로 로그인")
+        $0.setAttributedTitle(text, for: .normal)
+        $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 15)
+        $0.setTitleColor(.Main, for: .normal)
+        $0.layer.cornerRadius = 10
+        $0.layer.borderColor = UIColor.Line?.cgColor
+        $0.layer.borderWidth = 1
+    }
+
+    
     let emailText = UILabel().then{
         $0.text = "이메일 주소"
         $0.textColor = .Main
@@ -121,7 +144,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     lazy var signUpButton = UIButton().then{
         let text = NSAttributedString(string: "로그인")
         $0.setAttributedTitle(text, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 18)
+        $0.titleLabel?.font = UIFont(name: "LeferiBaseType-Regular", size: 15)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.backgroundColor = .Line
         $0.layer.cornerRadius = 10
@@ -132,7 +155,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private func addView() {
         [Logo,Logotext,emailTextField,emailUnderLine,emailText
         ,pwUnderLine,pwText,pwTextField, signUpButton,signInButton,
-        findEmailButton, findPwButton,stroke1,stroke2].forEach {
+        findEmailButton, findPwButton,stroke1,stroke2, naverLoginButton,appleLoginButton].forEach {
             view.addSubview($0)
         }
     }
@@ -203,6 +226,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             $0.trailing.equalTo(view.snp.centerX).offset(-55)
             $0.height.equalTo(14)
             $0.width.equalTo(1)
+        }
+        naverLoginButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(findEmailButton.snp.bottom).offset(50)
+            $0.size.equalTo(bounds.height * 0.07)
+            $0.trailing.equalToSuperview().offset(-20)
+        }
+        appleLoginButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(naverLoginButton.snp.bottom).offset(15)
+            $0.size.equalTo(bounds.height * 0.07)
+            $0.trailing.equalToSuperview().offset(-20)
         }
         
     }
